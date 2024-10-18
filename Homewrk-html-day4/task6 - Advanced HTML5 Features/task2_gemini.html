@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Theme Selector</title>
+    <style>
+        body {
+            background-color: #ffffff; /* Default background color */
+        }
+    </style>
+</head>
+<body>
+    <h1>Theme Selector</h1>
+    <button id="themeButton">Choose Theme</button>
+
+    <script>
+        const themeButton = document.getElementById('themeButton');
+        const body = document.querySelector('body');
+
+        // Load saved theme from localStorage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.style.backgroundColor = savedTheme;
+        }
+
+        themeButton.addEventListener('click', () => {
+            const colors = ['red', 'blue', 'green', 'yellow'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+            body.style.backgroundColor = randomColor;
+
+            // Save selected theme to localStorage
+            localStorage.setItem('theme', randomColor);
+        });
+    </script>
+</body>
+</html>
