@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form</title>
+</head>
+<body>
+    <h2>My Favorite Hobby</h2>
+    <p>My favorite hobby is reading. I love getting lost in a good book and exploring different worlds. I enjoy learning new things, improving my vocabulary, and experiencing different perspectives through the eyes of the characters.</p>
+
+    <h3>Related Content</h3>
+    <section>
+        <h4>YouTube Video</h4>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/your_video_id" title="YouTube Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="video-controls">
+                <button class="play-pause-btn">Play/Pause</button>
+                <input type="range" class="volume-control" min="0" max="100" value="50">
+            </div>
+        </div>
+
+        <h4>Audio File</h4>
+        <div class="audio-container">
+            <audio controls>
+                <source src="your_audio_file.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="audio-controls">
+                <button class="play-pause-btn">Play/Pause</button>
+                <input type="range" class="volume-control" min="0" max="100" value="50">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const video = document.querySelector('iframe');
+        const audio = document.querySelector('audio');
+        const playPauseBtns = document.querySelectorAll('.play-pause-btn');
+        const volumeControls = document.querySelectorAll('.volume-control');
+
+        playPauseBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (btn.closest('.video-container').contains(video)) {
+                    video.contentWindow.postMessage('play', '*');
+                } else {
+                    audio.paused ? audio.play() : audio.pause();
+                }
+            });
+        });
+
+        volumeControls.forEach(control => {
+            control.addEventListener('input', () => {
+                if (control.closest('.video-container').contains(video)) {
+                    video.contentWindow.postMessage('volume:' + control.value, '*');
+                } else {
+                    audio.volume = control.value / 100;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
