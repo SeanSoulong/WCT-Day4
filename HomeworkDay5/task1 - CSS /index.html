@@ -1,1 +1,603 @@
 
+
+-----Task 1: CSS Basics-------
+
+
+Definition: CSS (Cascading Style Sheets) is a stylesheet language used for describing the presentation of a document written in HTML or XML. It defines how elements should be displayed on screen, paper, or in other media.
+
+Role in Web Development: CSS plays a crucial role in web development by allowing developers to separate content (HTML) from presentation (CSS). This separation enhances maintainability and design flexibility, making it easier to create visually appealing web pages.
+
+Example HTML Document:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Basics Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <p>This is a simple CSS example.</p>
+</body>
+</html>
+Basic CSS Stylesheet (styles.css):
+
+css
+Copy code
+body {
+    background-color: #f0f0f0; /* Changes the background color of the page */
+    color: #333; /* Changes the text color */
+    font-size: 16px; /* Sets the base font size */
+}
+
+h1 {
+    font-size: 2em; /* Sets the size of the heading */
+}
+Explanation of CSS Code:
+
+body: Targets the entire webpage.
+background-color: Sets the background color to a light gray (#f0f0f0).
+color: Sets the text color to dark gray (#333).
+font-size: Sets the base font size to 16 pixels.
+h1: Targets all <h1> elements.
+font-size: Increases the font size of headings to 2em (twice the size of the base font).
+  
+  
+  
+------Task 2: Inline, Internal, and External CSS------
+  
+
+  
+Definitions:
+
+Inline CSS: Styles applied directly to an HTML element using the style attribute.
+Internal CSS: Styles defined within a <style> tag in the HTML document's <head>.
+External CSS: Styles defined in a separate CSS file linked to the HTML document.
+Example HTML Document:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Methods Example</title>
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS -->
+    <style>
+        /* Internal CSS */
+        p {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: red;">Inline CSS Example</h1> <!-- Inline CSS -->
+    <p>This is a paragraph styled with internal CSS.</p>
+</body>
+</html>
+Advantages and Disadvantages:
+
+Inline CSS:
+
+Advantages: Quick to apply; useful for single instances.
+Disadvantages: Difficult to maintain; not reusable; mixes content with presentation.
+Internal CSS:
+
+Advantages: Convenient for single-page styles; easier to manage than inline.
+Disadvantages: Styles not reusable across multiple pages; can make HTML cluttered.
+External CSS:
+
+Advantages: Reusable across multiple pages; keeps HTML clean; easier to maintain.
+Disadvantages: Requires an additional HTTP request; may take longer to load initially.
+  
+
+  
+-------Task 3: CSS Selectors----------
+  
+
+  
+CSS Selectors are patterns used to select the elements you want to style.
+
+Example HTML Document:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 class="title">CSS Selectors</h1>
+    <p id="intro">This paragraph uses an ID selector.</p>
+    <p class="info">This is an example of a class selector.</p>
+    <a href="#" class="link">Click here</a>
+</body>
+</html>
+CSS Rules:
+
+css
+Copy code
+h1 {
+    color: green; /* Element selector */
+}
+
+.title {
+    font-size: 2em; /* Class selector */
+}
+
+#intro {
+    font-weight: bold; /* ID selector */
+}
+
+.info {
+    color: orange; /* Class selector */
+}
+
+.link:hover {
+    color: red; /* Pseudo-class for hover effect */
+}
+Explanation of Selectors:
+
+h1: Selects all <h1> elements and changes their color to green.
+.title: Targets elements with the class "title" and sets their font size.
+#intro: Targets the element with the ID "intro" and makes the text bold.
+.info: Changes the text color of elements with the class "info" to orange.
+.link:hover: Applies a red color to the link when hovered over.
+  
+
+  
+-----Task 4: How to Debug CSS-------
+
+
+  
+Common CSS Issues:
+Elements not styled as expected.
+Overlapping styles due to specificity.
+Incorrect paths to CSS files.
+Using Browser Developer Tools:
+
+Inspect Elements: Right-click on an element and select "Inspect" to open the Developer Tools.
+View Styles: In the Elements tab, you can see the applied styles in the Styles pane.
+Test Changes: Modify CSS directly in the Developer Tools to see changes live.
+Example Issue:
+
+If an element doesn’t change color as expected, inspect the element to check if other styles are overriding it. Look for the computed styles and determine which rule is taking precedence.
+Resolution Steps:
+
+Adjust the specificity of your CSS selectors to ensure the intended style is applied.
+Check for any syntax errors in your CSS file that may prevent it from loading.
+  
+
+  
+-------Task 5: Style on HTML---------
+  
+
+  
+Applying Styles Directly: You can use the style attribute directly on HTML elements to apply styles.
+
+Example HTML Document:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline Styles Example</title>
+</head>
+<body>
+    <h1 style="color: purple;">This is a Heading</h1>
+    <p style="font-size: 20px; color: teal;">This is a paragraph with inline styles.</p>
+</body>
+</html>
+Pros and Cons of Inline Styles:
+
+Pros: Quick to apply; useful for specific cases; no need for a separate CSS file.
+Cons: Not reusable; difficult to maintain; increases HTML file size; can lead to cluttered code.
+
+
+
+-----Task 6: Text and Font------
+
+
+
+Styling Text and Fonts: CSS provides several properties to style text.
+
+Example HTML Document:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text and Font Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>This is a Heading</h1>
+    <p>This is a paragraph.</p>
+    <a href="#">This is a link</a>
+</body>
+</html>
+CSS Styles:
+
+css
+Copy code
+h1 {
+    font-family: Arial, sans-serif; /* Sets font family */
+    font-size: 2em; /* Sets font size */
+    font-weight: bold; /* Makes the text bold */
+    text-align: center; /* Centers the text */
+}
+
+p {
+    font-family: 'Times New Roman', serif; /* Sets a different font for paragraph */
+    font-size: 1.2em; /* Increases font size */
+    line-height: 1.5; /* Sets line height for readability */
+}
+
+a {
+    color: blue; /* Link color */
+    text-decoration: none; /* Removes underline */
+}
+Explanation of Text Properties:
+
+font-family: Defines the typeface.
+font-size: Specifies the size of the text.
+font-weight: Controls the boldness of the text.
+text-align: Aligns the text within its container.
+line-height: Sets the height between lines of text for better readability.
+
+
+
+----------Task 7: Online Fonts and Favicon-----------
+
+
+
+Online Fonts: Google Fonts is a popular service that provides a wide range of fonts to enhance web typography.
+
+Example of Using Google Fonts:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Fonts Example</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 style="font-family: 'Roboto', sans-serif;">Using Google Fonts</h1>
+    <p>This paragraph uses the Roboto font.</p>
+</body>
+</html>
+What is a Favicon? A favicon is a small icon associated with a particular website or web page, displayed in the browser's address bar or next to the page's name in a list of bookmarks.
+
+Adding a Favicon:
+
+Include a link to the favicon file in the <head> of your HTML.
+  
+
+  
+----------------Task 8: Color and Background----------
+  
+
+  
+Applying Colors and Backgrounds: CSS allows you to set colors and backgrounds in various formats.
+
+Example HTML Document:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color and Background Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Color and Backgrounds</h1>
+    <p>This paragraph has a background color.</p>
+</body>
+</html>
+CSS Styles:
+
+css
+Copy code
+body {
+    background-color: rgb(240, 240, 240); /* Background using RGB */
+}
+
+h1 {
+    color: hsl(210, 100%, 50%); /* Color using HSL */
+}
+
+p {
+    background-color: #ffcc00; /* Background color using hex */
+    padding: 10px; /* Adds padding around the text */
+}
+Explanation of Color Formats:
+
+Hex: A 6-digit code representing the RGB values (e.g., #ffcc00).
+RGB: Defines color in terms of red, green, and blue (e.g., rgb(240, 240, 240)).
+HSL: Defines color in terms of hue, saturation, and lightness (e.g., hsl(210, 100%, 50%)).
+
+
+
+----------Task 9: Alignment and Display-----------
+
+
+
+Aligning Elements: CSS provides various properties to control alignment and display.
+
+Example HTML Document:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alignment and Display Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Alignment and Display</h1>
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+</body>
+</html>
+CSS Styles:
+
+css
+Copy code
+h1 {
+    text-align: center; /* Centers the heading */
+}
+
+.box {
+    display: inline-block; /* Allows boxes to sit next to each other */
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: #007bff;
+    color: white;
+    text-align: center; /* Centers text inside the boxes */
+    vertical-align: top; /* Aligns the boxes to the top */
+}
+Explanation of Alignment Methods:
+
+text-align: Aligns text within its container (e.g., center, left).
+display: Controls how elements are displayed (block, inline, inline-block).
+vertical-align: Adjusts the vertical alignment of inline or inline-block elements.
+
+
+
+---------------Task 10: Box Model------------
+
+
+
+CSS Box Model: The CSS box model consists of margins, borders, padding, and the content area.
+
+Example HTML Document:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="box">Content</div>
+</body>
+</html>
+CSS Styles:
+
+css
+Copy code
+.box {
+    width: 200px;
+    padding: 20px; /* Space inside the box */
+    border: 5px solid black; /* Border around the box */
+    margin: 10px; /* Space outside the box */
+    background-color: lightgray;
+}
+Explanation of Box Model Components:
+
+Content: The actual content of the box (text, images).
+Padding: Space between the content and the border (increases the size of the box).
+Border: The line surrounding the box.
+Margin: Space outside the border (creates distance between boxes).
+
+
+
+---------Task 11: Table and <div>---------------
+
+  
+  
+Use of Tables and <div> Elements: Tables are used for displaying tabular data, while <div> elements are used for layout and styling.
+
+Example HTML Document:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table and Div Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Tables vs. Divs</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Alice</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>Bob</td>
+            <td>25</td>
+        </tr>
+    </table>
+
+    <div class="box">This is a box using a div element.</div>
+</body>
+</html>
+CSS Styles:
+
+css
+Copy code
+table {
+    width: 100%;
+    border-collapse: collapse; /* Merges borders */
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+.box {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: lightblue;
+}
+When to Use Tables vs. <div>:
+
+Tables: Best for displaying structured data (like financial data, schedules).
+Div Elements: Better for layout and styling, allowing for more flexibility with CSS.
+
+  
+  
+------------Task 12: Flexbox-------------
+
+
+  
+Flexbox Layout Model: Flexbox is a CSS layout model that allows you to design complex layouts easily and responsively.
+
+Example HTML Document:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="flex-container">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+    </div>
+</body>
+</html>
+CSS Styles:
+
+css
+Copy code
+.flex-container {
+    display: flex; /* Enables flexbox layout */
+    justify-content: space-between; /* Distributes items evenly */
+    align-items: center; /* Aligns items vertically centered */
+    padding: 20px;
+}
+
+.flex-item {
+    background-color: lightcoral;
+    padding: 10px;
+    flex: 1; /* Allows items to grow equally */
+    margin: 5px;
+}
+Explanation of Flexbox Properties:
+
+display: flex: Enables flexbox on the container.
+justify-content: Aligns items along the main axis (space-between distributes space).
+align-items: Aligns items along the cross axis (center aligns vertically).
+flex: Allows items to grow and shrink equally.
+  
+
+  
+----------Task 13: Variables--------------
+
+  
+  
+CSS Variables (Custom Properties): CSS variables allow you to store values that can be reused throughout your stylesheet, enhancing maintainability.
+
+Example HTML Document:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>CSS Variables</h1>
+    <p>This text uses variables for styling.</p>
+</body>
+</html>
+CSS Styles:
+
+css
+Copy code
+:root {
+    --main-color: #3498db; /* Defining a CSS variable */
+    --text-color: #333;
+}
+
+body {
+    background-color: var(--main-color); /* Using a CSS variable */
+    color: var(--text-color);
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 1.2em;
+}
+Changing Variable Values: You can change the value of a CSS variable in one place, and it will update everywhere it’s used.
+
+Explanation of CSS Variables:
+
+:root: Targets the root element (the document).
