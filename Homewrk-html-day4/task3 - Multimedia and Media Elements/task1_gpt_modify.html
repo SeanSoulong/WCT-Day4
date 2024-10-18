@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Webpage</title>
+    <style>
+        /* Style the custom buttons */
+        .control-btn {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .control-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Layout for controls */
+        .controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with your name -->
+    <header style="background-color: #f0f0f0; padding: 15px; text-align: center;">
+        <h1>Your Name</h1>
+    </header>
+
+    <main style="margin: 20px;">
+        <h2>My First Webpage</h2>
+
+        <section>
+            <h3>About Me</h3>
+            <p>Hello! I'm [Your Name], a passionate individual who enjoys learning new things and exploring creative hobbies.</p>
+        </section>
+
+        <section>
+            <h3>My Favorite Hobby</h3>
+            <ul>
+                <li>It keeps me engaged and challenges me to improve.</li>
+                <li>I get to learn new skills while having fun.</li>
+                <li>It connects me with like-minded people.</li>
+            </ul>
+        </section>
+
+        <!-- Multimedia Section -->
+        <section>
+            <h3>Watch and Listen</h3>
+
+            <!-- Video with Custom Controls -->
+            <div>
+                <video id="myVideo" width="560" height="315">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="controls">
+                    <button class="control-btn" onclick="playVideo()">Play</button>
+                    <button class="control-btn" onclick="pauseVideo()">Pause</button>
+                    <button class="control-btn" onclick="muteVideo()">Mute</button>
+                    <button class="control-btn" onclick="unmuteVideo()">Unmute</button>
+                </div>
+            </div>
+
+            <!-- Audio with Custom Controls -->
+            <div style="margin-top: 20px;">
+                <audio id="myAudio">
+                    <source src="your-audio-file.mp3" type="audio/mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+                <div class="controls">
+                    <button class="control-btn" onclick="playAudio()">Play</button>
+                    <button class="control-btn" onclick="pauseAudio()">Pause</button>
+                    <button class="control-btn" onclick="setVolume(0.5)">Volume 50%</button>
+                    <button class="control-btn" onclick="setVolume(1)">Volume 100%</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background-color: #f0f0f0; padding: 10px; text-align: center; position: fixed; width: 100%; bottom: 0;">
+        <p>Contact me: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+    </footer>
+
+    <script>
+        // Video Controls
+        const video = document.getElementById('myVideo');
+
+        function playVideo() {
+            video.play();
+        }
+
+        function pauseVideo() {
+            video.pause();
+        }
+
+        function muteVideo() {
+            video.muted = true;
+        }
+
+        function unmuteVideo() {
+            video.muted = false;
+        }
+
+        // Audio Controls
+        const audio = document.getElementById('myAudio');
+
+        function playAudio() {
+            audio.play();
+        }
+
+        function pauseAudio() {
+            audio.pause();
+        }
+
+        function setVolume(level) {
+            audio.volume = level;
+        }
+    </script>
+
+</body>
+</html>
