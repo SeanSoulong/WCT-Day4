@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Drawing</title>
+    <style>
+        /* Centering the canvas on the page */
+        canvas {
+            display: block;
+            margin: 20px auto;
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header style="background-color: #f0f0f0; padding: 15px; text-align: center;">
+        <h1>Your Name's Drawing Page</h1>
+    </header>
+
+    <main>
+        <h2 style="text-align: center;">Shapes on Canvas</h2>
+
+        <!-- Canvas Element -->
+        <canvas id="myCanvas" width="500" height="400"></canvas>
+    </main>
+
+    <footer style="background-color: #f0f0f0; padding: 10px; text-align: center; position: fixed; width: 100%; bottom: 0;">
+        <p>Contact me: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+    </footer>
+
+    <script>
+        // Get the canvas and its context
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Draw a Rectangle
+        ctx.fillStyle = 'skyblue';
+        ctx.fillRect(50, 50, 150, 100);
+
+        // Draw a Circle
+        ctx.beginPath();
+        ctx.arc(300, 150, 50, 0, Math.PI * 2, false); // x, y, radius, start angle, end angle
+        ctx.fillStyle = 'lightgreen';
+        ctx.fill();
+        ctx.closePath();
+
+        // Draw a Line
+        ctx.beginPath();
+        ctx.moveTo(100, 300); // Start point (x, y)
+        ctx.lineTo(400, 350); // End point (x, y)
+        ctx.strokeStyle = 'red';
+        ctx.lineWidth = 3;
+        ctx.stroke();
+        ctx.closePath();
+    </script>
+
+</body>
+</html>
