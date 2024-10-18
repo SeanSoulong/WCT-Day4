@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+</head>
+<body>
+
+    <h2>User Information Form</h2>
+
+    <form action="#" method="post" style="max-width: 400px; margin: auto;">
+        <!-- Name Field -->
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required placeholder="Enter your name" 
+               style="width: 100%; padding: 8px; margin-bottom: 10px;"><br>
+
+        <!-- Email Field with Validation -->
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email" required placeholder="Enter a valid email" 
+               style="width: 100%; padding: 8px; margin-bottom: 10px;"><br>
+
+        <!-- Phone Number Field with Numeric Validation -->
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number"
+               pattern="[0-9]{10}" maxlength="10"
+               style="width: 100%; padding: 8px; margin-bottom: 10px;">
+        <small>Format: 10-digit numeric value (e.g., 1234567890)</small><br><br>
+
+        <!-- Submit Button -->
+        <button type="submit" style="width: 100%; padding: 10px; background-color: #4CAF50; 
+                color: white; border: none; cursor: pointer;">
+            Submit
+        </button>
+    </form>
+
+</body>
+</html>
