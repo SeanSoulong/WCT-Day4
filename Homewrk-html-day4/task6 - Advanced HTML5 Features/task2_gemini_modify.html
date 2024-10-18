@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Offline Web App</title>
+</head>
+<body>
+    <h1>Offline Web App</h1>
+    <p>This webpage is cached using a service worker, so you can access it even when offline.</p>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(registration => {
+                    console.log('Service worker registered with scope:', registration.scope);
+                })
+                .catch(error => {
+                    console.error('Service worker registration failed:', error);
+                });
+        }
+    </script>
+</body>
+</html>
+----javacript-----
+self.addEventListener('install', event => {
+    event.waitUntil(
+        caches.open('static-cache')
+            .then(cache => {
+                return cache.addAll([
+                    '/',
+                    'service-worker.js',
+                    'style.css' // Add any other static assets you want to cache
+                ]);
+            })
+    );
+});
+
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        caches.match(event.request)
+            .then(response => {
+                if (response) {
+                    return response;
+                }
+
+                // Fallback to network request if not cached
+                return fetch(event.request);
+            })
+    );
+});
